@@ -1,5 +1,6 @@
 package com.example.surf;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -67,5 +68,16 @@ public class MainActivity extends AppCompatActivity {
 
   public void next(View view) {
     AnotherActivity.start(MainActivity.this, "someDebugInfo");
+  }
+
+  public void sendMessage(View view) {
+    Intent sendIntent = new Intent();
+    sendIntent.setAction(Intent.ACTION_SEND);
+    sendIntent.putExtra(Intent.EXTRA_TEXT, "some text");
+    sendIntent.setType("text/plain");
+
+    if (sendIntent.resolveActivity(getPackageManager()) != null) {
+      startActivity(sendIntent);
+    }
   }
 }
