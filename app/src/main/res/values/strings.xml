@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Surf</string>
+    <string name="open_another_activity">Open Another Activity</string>
+    <string name="hello_world_from_another_activity">Hello World from another activity!</string>
 </resources>
