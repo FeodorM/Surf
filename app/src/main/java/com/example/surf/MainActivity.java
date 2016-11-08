@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
   protected void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);
     Log.d(TAG, "onSaveInstanceState");
-    outState.putString(TAG, "testString");
+    outState.putString(TAG, "saving instance state is correct");
   }
 
   @Override
