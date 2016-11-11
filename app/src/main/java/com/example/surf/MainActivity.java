@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
     Log.d(TAG, "onDestroy");
   }
 
-
   public void next(View view) {
     AnotherActivity.start(MainActivity.this, "someDebugInfo");
   }
@@ -79,5 +79,10 @@ public class MainActivity extends AppCompatActivity {
     if (sendIntent.resolveActivity(getPackageManager()) != null) {
       startActivity(sendIntent);
     }
+  }
+
+  public void changeText(View view) {
+    TextView textView = (TextView) findViewById(R.id.textView);
+    textView.setText("It's alive!");
   }
 }
