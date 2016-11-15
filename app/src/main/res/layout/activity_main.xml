@@ -10,10 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.surf.MainActivity">
-
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="Hello World!"
         android:id="@+id/textView"/>
 
@@ -22,19 +22,44 @@
         android:text="@string/open_another_activity"
         android:textColor="@android:color/holo_red_dark"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:onClick="next"/>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="Go to buttons"
+        android:onClick="goToButtons"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:inputType="text"
+        android:hint="Enter something"
+        android:textColorHint="@android:color/holo_red_dark"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="Change Text"
         android:onClick="changeText"/>
 
-    <Button
-        android:text="Send"
+    <!--<Button-->
+        <!--android:text="Send"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/main_send_btn"-->
+        <!--android:onClick="sendMessage"/>-->
+
+    <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_send_btn"
-        android:onClick="sendMessage"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:inputType="textEmailAddress"
+        android:hint="address@example.com"/>
 </LinearLayout>

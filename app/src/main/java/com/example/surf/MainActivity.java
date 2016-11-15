@@ -5,11 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
   private static final String TAG = "MainActivity";
+
+  private TextView textView;
+  private EditText editText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     if (savedInstanceState != null && savedInstanceState.containsKey(TAG)) {
       Log.d(TAG, savedInstanceState.getString(TAG));
     }
+
+    textView = (TextView) findViewById(R.id.textView);
+    editText = (EditText) findViewById(R.id.editText);
 
     Log.d(TAG, "onCreate");
   }
@@ -70,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     AnotherActivity.start(MainActivity.this, "someDebugInfo");
   }
 
+/*
   public void sendMessage(View view) {
     Intent sendIntent = new Intent();
     sendIntent.setAction(Intent.ACTION_SEND);
@@ -80,9 +88,13 @@ public class MainActivity extends AppCompatActivity {
       startActivity(sendIntent);
     }
   }
+*/
 
   public void changeText(View view) {
-    TextView textView = (TextView) findViewById(R.id.textView);
-    textView.setText("It's alive!");
+    textView.setText(editText.getText());
+  }
+
+  public void goToButtons(View view) {
+    ButtonsActivity.start(this);
   }
 }

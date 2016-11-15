@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".AnotherActivity">
         </activity>
+        <activity android:name=".ButtonsActivity">
+        </activity>
     </application>
 
 </manifest>
