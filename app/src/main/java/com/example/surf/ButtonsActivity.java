@@ -50,6 +50,15 @@ public class ButtonsActivity extends AppCompatActivity {
       }
     });
 
+    ((CounterView) findViewById(R.id.a_counter)).setOnCounterClickListener(new CounterView.OnCounterClickListener() {
+      private int c = 0;
+      @Override
+      public void onClick() {
+        c++;
+        textView.setText("counter called " + c + " times");
+      }
+    });
+
     ((CheckBox) findViewById(R.id.checkbox1)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
