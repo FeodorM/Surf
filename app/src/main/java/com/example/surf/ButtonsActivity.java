@@ -5,17 +5,25 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.LinkedList;
 
 public class ButtonsActivity extends AppCompatActivity {
 
   private TextView textView;
   private RadioButton radioButton1;
   private CheckBox checkBox2;
+  private ArrayAdapter<String> adapter;
+  private ListView listView;
 
   public static void start(Context context) {
     Intent intent = new Intent(context, ButtonsActivity.class);
@@ -55,14 +63,27 @@ public class ButtonsActivity extends AppCompatActivity {
       @Override
       public void onClick() {
         c++;
-        textView.setText("counter called " + c + " times");
+        adapter.add("counter called " + c + " times");
+        adapter.notifyDataSetChanged();
       }
     });
 
     ((CheckBox) findViewById(R.id.checkbox1)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        textView.setText(buttonView.getText() + " is now " + (isChecked ? "checked" : "unchecked"));
+//        textView.setText(buttonView.getText() + " is now " + (isChecked ? "checked" : "unchecked"));
+        adapter.add(buttonView.getText() + " is now " + (isChecked ? "checked" : "unchecked"));
+        adapter.notifyDataSetChanged();
+      }
+    });
+    listView = (ListView) findViewById(R.id.listView);
+    adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new LinkedList<String>());
+    listView.setAdapter(adapter);
+
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      @Override
+      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(ButtonsActivity.this, ((TextView) view).getText(), Toast.LENGTH_SHORT).show();
       }
     });
   }

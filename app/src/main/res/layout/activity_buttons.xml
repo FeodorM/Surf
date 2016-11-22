@@ -16,7 +16,7 @@
         android:id="@id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
     <CheckBox
@@ -72,5 +72,12 @@
         app:min_value="40">
 
     </com.example.surf.CounterView>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/a_counter">
+    </ListView>
 
 </RelativeLayout>
