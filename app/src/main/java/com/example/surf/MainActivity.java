@@ -3,6 +3,7 @@ package com.example.surf;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -96,5 +97,13 @@ public class MainActivity extends AppCompatActivity {
 
   public void goToButtons(View view) {
     ButtonsActivity.start(this);
+  }
+
+  public void goToRecyclerView(View view) {
+    RecyclerActivity.start(this);
+  }
+
+  public void goToViewPager(View view) {
+    ViewPagerActivity.start(this);
   }
 }

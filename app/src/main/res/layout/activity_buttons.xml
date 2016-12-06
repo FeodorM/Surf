@@ -73,11 +73,29 @@
 
     </com.example.surf.CounterView>
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
+    <!--<fragment-->
+        <!--android:name="com.example.surf.SimpleFragment"-->
+        <!--android:id="@+id/simpleFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/a_counter">-->
+
+    <!--</fragment>-->
+
+    <Button
+        android:id="@+id/show_hide_fragment_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/a_counter">
-    </ListView>
+        android:layout_below="@id/a_counter"
+        android:text="Show / Hide Fragment"
+        android:onClick="showHideFragment"/>
+
+    <LinearLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_hide_fragment_btn"
+        android:orientation="vertical">
+    </LinearLayout>
 
 </RelativeLayout>
