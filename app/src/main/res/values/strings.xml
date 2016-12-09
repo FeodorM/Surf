@@ -3,4 +3,12 @@
     <string name="open_another_activity">Open Another Activity</string>
     <string name="hello_world_from_another_activity">Hello World from another activity!</string>
     <string name="it_s_a_fragment">It\'s a fragment!</string>
+    <plurals name="androids">
+        <item quantity="zero">Нет андроидов</item>
+        <item quantity="one">%1$d андроид</item>
+        <item quantity="two">%1$d андроида</item>
+        <item quantity="few">%1$d андроида</item>
+        <item quantity="many">%1$d андроидов</item>
+        <item quantity="other">%1$d андроидов</item>
+    </plurals>
 </resources>

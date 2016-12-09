@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
     editText = (EditText) findViewById(R.id.editText);
 
     Log.d(TAG, "onCreate");
+
+    for (int i = 0; i < 30; i ++) {
+      Log.d(TAG, getResources().getQuantityString(R.plurals.androids, i, i));
+    }
   }
 
   @Override
