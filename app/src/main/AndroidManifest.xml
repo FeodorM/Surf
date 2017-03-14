@@ -25,6 +25,10 @@
         </activity>
         <activity android:name=".SharedPrefsActivity">
         </activity>
+        <activity android:name=".NotificationsActivity">
+        </activity>
+        <activity android:name=".NetworkActivity">
+        </activity>
     </application>
 
 </manifest>

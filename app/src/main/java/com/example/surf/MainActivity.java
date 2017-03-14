@@ -115,4 +115,12 @@ public class MainActivity extends AppCompatActivity {
   public void goToSharedPrefsActivity(View view) {
     SharedPrefsActivity.start(this);
   }
+
+  public void goToNotifications(View view) {
+    NotificationsActivity.start(this);
+  }
+
+  public void goToNetwork(View view) {
+    NetworkActivity.start(this);
+  }
 }
